@@ -12,7 +12,7 @@ public class BibliotecaView {
         System.out.println("                        BemVindo a LeaBrary                        ");
         System.out.println("-------------------------------------------------------------------");
         System.out.println(" 1 - Cadastrar Livro");
-        System.out.println(" 2 - Opção2");
+        System.out.println(" 2 - Fazer Empréstimo");
         System.out.println(" 3 - Opção3");
 
 
@@ -22,6 +22,8 @@ public class BibliotecaView {
     public int capturaOpcao(){
 
         int opcao = read.nextInt();
+
+        read.nextLine();
 
         return opcao;
     }
@@ -52,6 +54,8 @@ public class BibliotecaView {
         System.out.println("-------------------------------------------------------------------");
         System.out.println(" Insira aqui: ");
         int anoLivro = read.nextInt();
+
+        read.nextLine();
 
         return anoLivro;
     }

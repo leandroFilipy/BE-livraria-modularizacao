@@ -14,7 +14,7 @@ public class LivroRepository {
 
     public void inserirLivro(Livro livro)throws SQLException{
 
-        String query = "INSERT INTO livros (titulo, autor, ano, disponibilidade) VALUES (?,?,?,?);";
+        String query = "INSERT INTO livros (titulo, autor, ano, disponivel) VALUES (?,?,?,?);";
 
         try(Connection conn = Conexao.conectar();
             PreparedStatement stmt = conn.prepareStatement(query)){
@@ -47,14 +47,18 @@ public class LivroRepository {
                         rs.getString("titulo"),
                         rs.getString("autor"),
                         rs.getInt("ano"),
-                        rs.getBoolean("disponibilidade")
+                        rs.getBoolean("disponivel")
                 );
 
+                System.out.println("===================================================================");
+                System.out.println("                               Livro                               ");
+                System.out.println("-------------------------------------------------------------------");
                 System.out.println("ID: " + livro2.getId());
                 System.out.println("Título: " + livro2.getTitulo());
                 System.out.println("Autor: " + livro2.getAutor());
                 System.out.println("Ano: " + livro2.getAno());
                 System.out.println("Disponibilidade: " + livro2.getDisponivel());
+                System.out.println("");
                 livros.add(livro2);
             }
 
@@ -62,15 +66,15 @@ public class LivroRepository {
         return livros;
     }
 
-    public void atualizarDisponibilidade (Livro livro, boolean disponibilidade, int id) throws SQLException {
+    public void atualizarDisponibilidade (Livro livro, boolean disponivel, int id) throws SQLException {
 
-        String query = "UPDATE livros SET disponibilidade = ? WHERE id = ?;";
+        String query = "UPDATE livros SET disponivel = ? WHERE id = ?;";
 
         try(Connection conn = Conexao.conectar();
         PreparedStatement stmt = conn.prepareStatement(query)){
 
 
-            stmt.setBoolean(1, disponibilidade);
+            stmt.setBoolean(1, disponivel);
             stmt.setInt(2, id);
             stmt.executeUpdate();
         }catch (SQLException e){

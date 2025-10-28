@@ -31,7 +31,10 @@ public class Livro {
         this.disponivel=true;
     }
 
-    public Livro(String tituloLivro, String autorLivro, int anoLivro) {
+    public Livro(String titulo, String autor, int ano) {
+        this.titulo = titulo;
+        this.autor=autor;
+        this.ano = ano;
     }
 
     public int getId() {

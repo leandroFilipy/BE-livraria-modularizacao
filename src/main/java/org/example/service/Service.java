@@ -14,6 +14,11 @@ public class Service {
                 livroService.cadastrarLivro();
 
             }
+
+            case 2 -> {
+
+                livroService.listarLivro();
+            }
         }
 
     }
