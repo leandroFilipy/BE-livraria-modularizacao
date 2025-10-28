@@ -22,11 +22,16 @@ public class Livro {
         this.ano = ano;
         this.disponivel = disponivel;
     }
+    
+    
 
     public Livro(){
         this.titulo="";
         this.ano=0;
         this.disponivel=true;
+    }
+
+    public Livro(String tituloLivro, String autorLivro, int anoLivro) {
     }
 
     public int getId() {

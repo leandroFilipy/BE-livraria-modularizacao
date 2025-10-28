@@ -6,16 +6,17 @@ public class BibliotecaView {
 
     Scanner read = new Scanner(System.in);
 
-    public void mostrarMenu(){
+    public int mostrarMenu(){
 
         System.out.println("===================================================================");
-        System.out.println("                        Welcome to LeaBrary                        ");
+        System.out.println("                        BemVindo a LeaBrary                        ");
         System.out.println("-------------------------------------------------------------------");
-        System.out.println(" 1 - Opção1");
+        System.out.println(" 1 - Cadastrar Livro");
         System.out.println(" 2 - Opção2");
         System.out.println(" 3 - Opção3");
-        capturaOpcao();
 
+
+        return capturaOpcao();
     }
 
     public int capturaOpcao(){
@@ -23,6 +24,36 @@ public class BibliotecaView {
         int opcao = read.nextInt();
 
         return opcao;
+    }
+    public String pedirTitulo(){
+
+        System.out.println("===================================================================");
+        System.out.println("                     Insira o Título do livro                      ");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println(" Insira aqui: ");
+        String tituloLivro = read.nextLine();
+
+        return tituloLivro;
+    }
+    public String pedirAutor(){
+
+        System.out.println("===================================================================");
+        System.out.println("                      Insira o Autor do livro                      ");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println(" Insira aqui: ");
+        String autorLivro = read.nextLine();
+
+        return autorLivro;
+    }
+    public int anoLivro(){
+
+        System.out.println("===================================================================");
+        System.out.println("                       Insira o Ano do livro                       ");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println(" Insira aqui: ");
+        int anoLivro = read.nextInt();
+
+        return anoLivro;
     }
 
 }

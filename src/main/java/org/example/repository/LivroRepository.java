@@ -14,7 +14,7 @@ public class LivroRepository {
 
     public void inserirLivro(Livro livro)throws SQLException{
 
-        String query = "INSERT INTO livros (titulo, autor, ano, disponivel) VALUES (?,?,?,?);";
+        String query = "INSERT INTO livros (titulo, autor, ano, disponibilidade) VALUES (?,?,?,?);";
 
         try(Connection conn = Conexao.conectar();
             PreparedStatement stmt = conn.prepareStatement(query)){
@@ -22,7 +22,7 @@ public class LivroRepository {
             stmt.setString(1, livro.getTitulo());
             stmt.setString(2, livro.getAutor());
             stmt.setInt(3, livro.getAno());
-            stmt.setBoolean(4, livro.getDisponivel());
+            stmt.setBoolean(4, true);
             stmt.executeUpdate();
 
         }catch (SQLException e){
